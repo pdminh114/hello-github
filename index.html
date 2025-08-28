@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireworks Animation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <canvas id="fireworks-canvas"></canvas>
+    
+    <div class="controls">
+        <button id="settings-toggle" class="control-btn">
+            <i class="fas fa-cog"></i>
+        </button>
+        <button id="sound-toggle" class="control-btn">
+            <i class="fas fa-volume-up"></i>
+        </button>
+        <button id="theme-toggle" class="control-btn">
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+    
+    <div class="settings-panel">
+        <h2>Fireworks Settings</h2>
+        <div class="setting">
+            <label for="particle-count">Particles:</label>
+            <input type="range" id="particle-count" min="30" max="150" value="80">
+            <span class="value">80</span>
+        </div>
+        <div class="setting">
+            <label for="explosion-size">Explosion Size:</label>
+            <input type="range" id="explosion-size" min="20" max="100" value="50">
+            <span class="value">50</span>
+        </div>
+        <div class="setting">
+            <label for="launch-rate">Launch Rate:</label>
+            <input type="range" id="launch-rate" min="1" max="10" value="3">
+            <span class="value">3</span>
+        </div>
+        <div class="setting colors">
+            <label>Colors:</label>
+            <div class="color-options">
+                <div class="color-option active" data-color="#ff0000" style="background-color: #ff0000;"></div>
+                <div class="color-option" data-color="#00ff00" style="background-color: #00ff00;"></div>
+                <div class="color-option" data-color="#0000ff" style="background-color: #0000ff;"></div>
+                <div class="color-option" data-color="#ffff00" style="background-color: #ffff00;"></div>
+                <div class="color-option" data-color="#ff00ff" style="background-color: #ff00ff;"></div>
+                <div class="color-option" data-color="#00ffff" style="background-color: #00ffff;"></div>
+                <div class="color-option" data-color="#ffffff" style="background-color: #ffffff;"></div>
+                <div class="color-option rainbow" data-color="rainbow">🌈</div>
+            </div>
+        </div>
+        <div class="setting">
+            <label for="auto-launch">Auto Launch:</label>
+            <label class="switch">
+                <input type="checkbox" id="auto-launch" checked>
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <button id="reset-settings" class="btn">Reset to Default</button>
+    </div>
+
+    <div class="intro-overlay">
+        <div class="intro-content">
+            <h1>Welcome to Fireworks!</h1>
+            <p>Click anywhere to create fireworks or just enjoy the show.</p>
+            <p>Use the controls in the top right to customize your experience.</p>
+            <button id="start-btn" class="btn">Start the Show!</button>
+        </div>
+    </div>
+
+    <script src="js/particles.js"></script>
+    <script src="js/fireworks.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
